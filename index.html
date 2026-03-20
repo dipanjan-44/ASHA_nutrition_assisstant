@@ -4,7 +4,7 @@
     <!-- Meta data and document title -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>AI Recipe Generator</title>
+    <title>ASHA NA</title>
     
     <!-- External fonts and libraries -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -21,98 +21,162 @@
     <link rel="stylesheet" href="chatbot_v2_styles.css" />
   </head>
   <body>
-    <!-- Author information -->
-    <div class="author-box">
-      <div class="author-info">
-        Dipanjan Chakraborty (12321749)<br>
-        Anish Malu (12311673)<br>
-        Harsh Sirohi (12300911)
-      </div>
+    <div class="bg-glow"></div>
+    <!-- =======================
+        STEP B.1 – PAGE WRAPPER
+        ======================= -->
+    <div class="page">
+        <header class="topbar">
+            <div class="logo">
+                ASHA
+            </div>
+
+            <button id="themeToggle" class="theme-toggle">
+                🌙 Dark Mode
+            </button>
+        </header>
+
+        <div class="app-layout">
+
+        <!-- LEFT PANEL -->
+        <aside class="left-panel">
+
+            <!-- Did You Know -->
+            <div id="did-you-know-container">
+            <h3 class="fact-title">Did You Know?</h3>
+            <div id="did-you-know-text"></div>
+            </div>
+
+            <div class="saved-recipes-panel">
+                <h3 class="sidebar-title">Saved Recipes</h3>
+                <div id="savedRecipesList"></div>
+            </div>
+
+            <!-- Calorie Calculator -->
+            <div class="container2">
+            <div class="calculator-scroll">
+                <h2>Calorie Calculator</h2>
+                <form id="calorieForm">
+                <label>Age: <input type="number" id="age" required></label>
+
+                <label>Gender:
+                <select id="gender">
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                </select>
+                </label>
+
+                <label>Height (cm): <input type="number" id="height" required></label>
+                <label>Weight (kg): <input type="number" id="weight" required></label>
+
+                <label>Activity Level:
+                <select id="activity">
+                    <option value="1.2">Sedentary</option>
+                    <option value="1.375">Lightly active</option>
+                    <option value="1.55">Moderately active</option>
+                    <option value="1.725">Very active</option>
+                    <option value="1.9">Super active</option>
+                </select>
+                </label>
+
+                <label>Goal:
+                <select id="goal">
+                    <option value="maintenance">Maintenance</option>
+                    <option value="bulking">Bulking</option>
+                    <option value="cutting">Cutting</option>
+                </select>
+                </label>
+
+                <button type="submit">Calculate</button>
+                </form>
+
+            </div>
+            </div>
+
+        </aside>
+
+
+        <!-- MAIN AI PANEL -->
+        <main class="main-panel">
+
+            <section class="hero-input">
+            <div class="form-container">
+                <form id="recipe-generator-form">
+                <input
+                    type="text"
+                    placeholder="Ask ASHA for a recipe..."
+                    autofocus
+                    required
+                    autocomplete="off"
+                    class="instructions"
+                    id="user-instructions"
+                />
+                <input type="submit" value="Generate" class="submit-button" />
+                </form>
+
+                <div class="prompt-chips">
+                    <button class="chip">High protein breakfast</button>
+                    <button class="chip">10 minute dinner</button>
+                    <button class="chip">Vegetarian Indian meal</button>
+                    <button class="chip">Muscle gain lunch</button>
+                    <button class="chip">Low calorie snack</button>
+                </div>
+
+                <div class="hint">
+                Try: "High protein breakfast" or "Italian pasta"
+                </div>
+            </div>
+            </section>
+
+            <section class="chat-section">
+                <div id="chatContainer" class="chat-container"></div>
+                <div class="ai-explanation hidden" id="aiExplanation"></div>
+            </section>
+
+            <section class="nutrition-section">
+            <div class="nutrition-summary hidden" id="nutritionSummary"></div>
+            </section>
+
+        </main>
+
+
+        <!-- RIGHT PANEL -->
+        <aside class="right-panel">
+
+            <h3 class="sidebar-title">Quick Cuisine Ideas</h3>
+
+            <div class="meal-card-right" data-cuisine="Italian">Italian</div>
+            <div class="meal-card-right" data-cuisine="French">French</div>
+            <div class="meal-card-right" data-cuisine="Mexican">Mexican</div>
+            <div class="meal-card-right" data-cuisine="Chinese">Chinese</div>
+            <div class="meal-card-right" data-cuisine="Indian">Indian</div>
+            <div class="meal-card-right" data-cuisine="Japanese">Japanese</div>
+            <div class="meal-card-right" data-cuisine="Thai">Thai</div>
+            <div class="meal-card-right" data-cuisine="Greek">Greek</div>
+
+        </aside>
     </div>
 
-    <!-- Main container for recipe generator -->
-    <div class="container">
-      <!-- Page header -->
-      <header>
-        <h1>AI Recipe Generator</h1>
-      </header>
-      
-      <!-- Main content area -->
-      <main>
-        <!-- Recipe input form -->
-        <div class="form-container">
-          <form id="recipe-generator-form">
-            <input
-              type="text"
-              placeholder="What would you like a recipe for?"
-              autofocus
-              required
-              autocomplete="off"
-              class="instructions"
-              id="user-instructions"
-            />
-            <input type="submit" class="submit-button" />
-          </form>
-          <div class="hint">i.e Cake, cookies, pancakes or you can prompt your meal</div>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            
+            <p class="footer-name">&copy;
+                <a href="https://dipanjanchakraborty.com" target="_blank" class="footer-name-link">
+                    <strong>Dipanjan Chakraborty</strong>
+                </a>
+            </p>
+
+            <div class="footer-links">
+            <a href="https://www.linkedin.com/in/dipanjan44" target="_blank">LinkedIn</a>
+            <a href="https://www.instagram.com/dipanjan_it_is_developer" target="_blank">Instagram</a>
+            <a href="developer.dipanjan2255@gmail.com">Email</a>
+            </div>
+
         </div>
-        
-        <!-- Recipe display area -->
-        <div class="recipe hidden" id="recipe"></div>
-      </main>
-    </div>
-
-    <!-- Did you know facts container -->
-    <div id="did-you-know-container">
-      <h3 class="fact-title">Did You Know?</h3>
-      <div id="did-you-know-text"></div>
-    </div>
-
-    <!-- Cuisine suggestions sidebar -->
-    <div class="sidebar-right">
-      <h3 class="sidebar-title">Cuisines</h3>
-      <div class="meal-card-right" data-cuisine="Italian">Italian</div>
-      <div class="meal-card-right" data-cuisine="French">French</div>
-      <div class="meal-card-right" data-cuisine="Mexican">Mexican</div>
-      <div class="meal-card-right" data-cuisine="Chinese">Chinese</div>
-      <div class="meal-card-right" data-cuisine="Indian">Indian</div>
-      <div class="meal-card-right" data-cuisine="Japanese">Japanese</div>
-      <div class="meal-card-right" data-cuisine="Thai">Thai</div>
-      <div class="meal-card-right" data-cuisine="Greek">Greek</div>
-    </div>
-
-    <!-- Calorie calculator container -->
-    <div class="container2">
-      <h2>Calorie Calculator</h2>
-      <form id="calorieForm">
-        <label>Age: <input type="number" id="age" required></label>
-        <label>Gender:
-          <select id="gender">
-            <option value="male">Male</option>
-            <option value="female">Female</option>
-          </select>
-        </label>
-        <label>Height (cm): <input type="number" id="height" required></label>
-        <label>Weight (kg): <input type="number" id="weight" required></label>
-        <label>Activity Level:
-          <select id="activity">
-            <option value="1.2">Sedentary</option>
-            <option value="1.375">Lightly active</option>
-            <option value="1.55">Moderately active</option>
-            <option value="1.725">Very active</option>
-            <option value="1.9">Super active</option>
-          </select>
-        </label>
-        <button type="submit">Calculate</button>
-      </form>
-      <div id="result"></div>
-    </div>
-
-    <!-- Footer section -->
-    <footer>
-      <p>&copy; 2025 AI Recipe Generator. All rights reserved.</p>
     </footer>
 
-    <!-- Did you know facts script -->
+    <!-- Facts Script -->
     <script>
         const facts = [
         "In Iceland, fermented shark (hákarl) is considered a delicacy, known for its strong ammonia smell.",
@@ -120,34 +184,19 @@
         "Casu martzu is a Sardinian sheep milk cheese that contains live insect larvae.",
         "Kiviaq is a traditional Inuit food from Greenland that involves fermenting auk birds inside a seal skin.",
         "Balut is a fertilized duck embryo that is boiled and eaten in the shell, popular in the Philippines.",
-        "In Scotland, haggis is a savory pudding containing sheep's pluck (heart, liver, and lungs), minced with onion, oatmeal, suet, spices, and stock.",
-        "Surströmming is a Swedish fermented herring with a notoriously strong and pungent odor.",
-        "Witchetty grubs are large, white larvae of wood-boring moths, eaten raw or cooked by Aboriginal Australians.",
-        "Hakarl, balut, and surströmming are often considered acquired tastes due to their strong flavors and preparation methods.",
-        "The practice of eating insects (entomophagy) is common in many parts of the world and is a sustainable source of protein.",
-        "Century egg (pidan) is a Chinese preserved duck, chicken, or quail egg that has been cured for several weeks or months.",
-        "Sannakji is a Korean dish of live baby octopus that has been cut into small pieces and seasoned with sesame oil.",
-        "Mopane worms are caterpillars of the emperor moth, a vital source of protein for many in Southern Africa.",
-        "Escamoles are the edible larvae and pupae of ants, considered a delicacy in Mexico and often referred to as 'insect caviar'.",
-        "Rocky Mountain oysters are not actually oysters but bull testicles that are deep-fried, a popular dish in parts of North America.",
-        "Blood sausage (black pudding, boudin noir) is a sausage made by cooking animal blood with a filler until it is thick enough to congeal when cooled.",
-        "Tripe is the stomach lining of farm animals, used in various cuisines around the world, such as menudo in Mexico and callos a la madrileña in Spain.",
-        "Fugu, or pufferfish, is a Japanese delicacy that can be lethally poisonous if not prepared correctly by licensed chefs.",
-        "Bird's nest soup is a delicacy in Chinese cuisine, made from the solidified saliva of swiftlets.",
-        "Durian is a Southeast Asian fruit known as the 'king of fruits' but has a very strong and often polarizing odor."
-      ];
+        "Surströmming is a Swedish fermented herring with a notoriously strong odor.",
+        "Fugu is a Japanese delicacy that can be lethally poisonous if not prepared correctly."
+        ];
 
         function updateFact() {
-            const randomIndex = Math.floor(Math.random() * facts.length);
-            const fact = facts[randomIndex];
-            document.getElementById('did-you-know-text').textContent = fact;
+        const randomIndex = Math.floor(Math.random() * facts.length);
+        document.getElementById('did-you-know-text').textContent = facts[randomIndex];
         }
 
         updateFact();
         setInterval(updateFact, 7000);
     </script>
 
-    <!-- Main script file -->
     <script src="chatbot_v2_script.js"></script>
-  </body>
+    </body>
 </html>
