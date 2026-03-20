@@ -1079,3 +1079,82 @@ body::after {
 body.dark::after {
   opacity: 0.2;
 }
+
+/* ===============================
+   MOBILE RESPONSIVENESS
+   =============================== */
+
+@media (max-width: 768px) {
+
+  /* STACK LAYOUT */
+  .main-layout {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 16px;
+  }
+
+  /* REMOVE STICKY BEHAVIOR */
+  .left-panel,
+  .sidebar-right {
+    position: static;
+    top: auto;
+  }
+
+  /* FULL WIDTH CONTAINERS */
+  .container,
+  .left-panel,
+  .sidebar-right {
+    width: 100%;
+  }
+
+  /* INPUT FORM */
+  form {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .instructions {
+    width: 100%;
+  }
+
+  .submit-button {
+    width: 100%;
+  }
+
+  /* CARDS SPACING */
+  .recipe,
+  .nutrition-summary,
+  #did-you-know-container,
+  .container2,
+  .sidebar-right {
+    padding: 20px;
+  }
+
+  /* HEADER TEXT */
+  .app-header h1 {
+    font-size: 24px;
+    text-align: center;
+  }
+
+  .subtitle {
+    font-size: 13px;
+    text-align: center;
+  }
+
+  /* ASSISTIVE GRID → STACK */
+  .assistive-section {
+    grid-template-columns: 1fr;
+  }
+
+  /* FIX DROPDOWN OVERFLOW */
+  .suggestions-container {
+    width: 100%;
+  }
+
+}
+
+button,
+.submit-button,
+.meal-card-right {
+  min-height: 44px;
+}
