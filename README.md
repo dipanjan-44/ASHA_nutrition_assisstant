@@ -1,2 +1,23 @@
-# AI-Chatbot-Recipe_Generator
-This web-based application leverages AI to generate personalized recipes based on user prompts and cuisine preferences. Users can input dish names or ingredients to receive detailed recipes, while a built-in calorie calculator provides customized nutritional insights. The interface also includes interactive dropdowns for exploring a variety of global cuisines, making meal planning intuitive and engaging.
+# 🍽️ ASHA Nutrition Assistant
+
+An intelligent web app that generates recipes and provides personalized nutrition insights.
+
+## 🚀 Features
+- AI-based recipe generation
+- Nutrition analysis (Calories, Macros, BMI)
+- Dark/Light mode
+- Cuisine-based recommendations
+- Interactive UI with animations
+
+## 🛠️ Tech Stack
+- HTML
+- CSS (Design System + Dark Mode)
+- JavaScript
+- Axios
+- Typewriter.js
+
+## 🌐 Live Demo
+https://your-username.github.io/ai-nutrition-assistant/
+
+## 👨‍💻 Author
+Dipanjan Chakraborty
