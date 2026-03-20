@@ -17,7 +17,7 @@ An intelligent web app that generates recipes and provides personalized nutritio
 - Typewriter.js
 
 ## 🌐 Live Demo
-https://your-username.github.io/ai-nutrition-assistant/
+https://dipanjan-44.github.io/ASHA_nutrition_assisstant/
 
 ## 👨‍💻 Author
 Dipanjan Chakraborty
