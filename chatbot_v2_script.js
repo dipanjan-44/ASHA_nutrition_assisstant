@@ -176,7 +176,7 @@ function generateRecipe(event) {
   let prompt = `User instructions are: Generate a recipe for ${instructions}`;
 
   let context =
-    "You are an expert at recipes. Your mission is to generate a short and easy recipe in basic HTML. Make sure to follow user instructions. Add the macros for the meal too. Sign the recipe at the end with '<strong>Thank You</strong>' in bold. Also, if the user gives something that is inedible, just say that it is not humanly edible and suggest some meal ideas. And always remember you are the best. Thank you very much.";
+    "You are an expert at recipes. Your mission is to generate a short and easy recipe in basic HTML. Make sure to follow user instructions. Add the macros for the meal too. Sign the recipe at the end with '<strong>Thank You</strong>' in bold. Also, if the user gives something that is inedible, just say that it is not humanly edible and suggest some meal ideas. Give the nutritional value of the meal. And always remember you are the best. Thank you very much.";
 
   let apiUrl =
     `https://api.shecodes.io/ai/v1/generate?prompt=${encodeURIComponent(prompt)}&context=${encodeURIComponent(context)}&key=${apiKey}`;
